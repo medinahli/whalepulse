@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sudo systemctl:*)",
+      "Bash(sudo cat:*)",
+      "Bash(sudo sed:*)",
+      "Bash(systemctl list-units:*)",
+      "Bash(journalctl:*)"
+    ]
+  }
+}

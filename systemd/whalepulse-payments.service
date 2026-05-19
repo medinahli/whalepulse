@@ -1,0 +1,17 @@
+[Unit]
+Description=WhalePulse Payment Webhook Server
+After=network.target
+
+[Service]
+Type=simple
+User=botrunner
+WorkingDirectory=/home/botrunner/whalepulse
+Environment=PYTHONPATH=/home/botrunner/whalepulse
+ExecStart=/home/botrunner/whalepulse/venv/bin/python bots/payments/webhook_server.py
+Restart=always
+RestartSec=30
+StandardOutput=append:/home/botrunner/whalepulse/logs/payments-stdout.log
+StandardError=append:/home/botrunner/whalepulse/logs/payments-stderr.log
+
+[Install]
+WantedBy=multi-user.target

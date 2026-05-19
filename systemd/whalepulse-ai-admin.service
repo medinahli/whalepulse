@@ -1,0 +1,17 @@
+[Unit]
+Description=WhalePulse AI Admin Bot
+After=network.target
+
+[Service]
+Type=simple
+User=botrunner
+WorkingDirectory=/home/botrunner/whalepulse
+Environment=PYTHONPATH=/home/botrunner/whalepulse
+ExecStart=/home/botrunner/whalepulse/venv/bin/python bots/ai_admin/main.py
+Restart=always
+RestartSec=30
+StandardOutput=append:/home/botrunner/whalepulse/logs/ai-admin-stdout.log
+StandardError=append:/home/botrunner/whalepulse/logs/ai-admin-stderr.log
+
+[Install]
+WantedBy=multi-user.target

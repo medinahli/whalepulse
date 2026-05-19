@@ -1,0 +1,13 @@
+config/.env
+data/
+logs/
+memory/
+__pycache__/
+*.pyc
+*.pyo
+.python-version
+venv/
+.env
+*.db
+*.db-shm
+*.db-wal

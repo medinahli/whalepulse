@@ -1,0 +1,17 @@
+[Unit]
+Description=WhalePulse Subscription Bot
+After=network.target
+
+[Service]
+Type=simple
+User=botrunner
+WorkingDirectory=/home/botrunner/whalepulse
+Environment=PYTHONPATH=/home/botrunner/whalepulse
+ExecStart=/home/botrunner/whalepulse/venv/bin/python bots/payments/subscribe_bot.py
+Restart=always
+RestartSec=30
+StandardOutput=append:/home/botrunner/whalepulse/logs/subscribe-stdout.log
+StandardError=append:/home/botrunner/whalepulse/logs/subscribe-stderr.log
+
+[Install]
+WantedBy=multi-user.target
